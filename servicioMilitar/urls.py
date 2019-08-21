@@ -17,9 +17,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf.urls import url
+from django.contrib.auth import login
+from django.contrib.auth.views import logout_then_login
 
 urlpatterns = [
-    url('^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^login/', login, {'template_name': 'index.html'}, name='login'),
+    url(r'^logout/', logout_then_login, name='logout'),
 ]
 
 if settings.DEBUG:
