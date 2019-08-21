@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.soldado',
+    'apps.cuartel',
 ]
 
 MIDDLEWARE = [
@@ -87,8 +89,12 @@ WSGI_APPLICATION = 'servicioMilitar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'serviciomilitar',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
@@ -139,3 +145,4 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(os.path.basename(BASE_DIR), 'static_env', 'static_root')
 MEDIA_ROOT = os.path.join(os.path.basename(BASE_DIR), 'static_env', 'media_root')
 
+>>>>>> master
