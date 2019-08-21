@@ -134,4 +134,3 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(os.path.basename(BASE_DIR), 'static_env', 'static_root')
 MEDIA_ROOT = os.path.join(os.path.basename(BASE_DIR), 'static_env', 'media_root')
 
->>>>>> master

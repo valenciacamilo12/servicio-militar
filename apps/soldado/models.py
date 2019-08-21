@@ -5,10 +5,16 @@ class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=40)
 
+    def __str__(self):
+        return '{}'.format(self.descripcion)
+
 
 class Cuerpo(models.Model):
     id_cuerpo = models.AutoField(primary_key=True)
     denominacion = models.CharField(max_length=40)
+
+    def __str__(self):
+        return '{}'.format(self.denominacion)
 
 class Soldado(models.Model):
     id_soldado = models.AutoField(primary_key=True)
@@ -18,3 +24,6 @@ class Soldado(models.Model):
     servicio = models.ForeignKey(Servicio, models.CASCADE, blank=True, null=True)
     cuerpo = models.ForeignKey(Cuerpo, models.CASCADE, blank=True, null=True)
     compania = models.ForeignKey(Compania,blank=True, null=True)
+
+    def __str__(self):
+        return '{} {}'.format(self.nombre, self.apellido)
