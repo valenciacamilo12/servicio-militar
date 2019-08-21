@@ -1,0 +1,12 @@
+{% extends 'base/funciones.html' %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Crear soldados</h3>
+        <br>
+        {{  form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="#" class="btn btn-success">Listar soldados</a>
+    </form>
+{% endblock content %}
