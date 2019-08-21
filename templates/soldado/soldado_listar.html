@@ -1,0 +1,52 @@
+{% extends 'base/funciones.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar soldados</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Grado</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Cuerpo</th>
+                    <th scope="col">Compañia</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for soldado in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ soldado.id_soldado }}</th>
+                            <td>{{ soldado.nombre }}</td>
+                            <td>{{ soldado.apellido }}</td>
+                            <td>{{ soldado.grado }}</td>
+                            <td>{{ soldado.servicio }}</td>
+                            <td>{{ soldado.cuerpo }}</td>
+                            <td>{{ soldado.compania }}</td>
+                            <td>
+                                <a href="#" class="btn btn-success">Editar</a>
+                                <a href="#" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                <br>
+                <div class="container-fluid">
+                    <h3>Aun no hay soldados registrados</h3>
+                    <a href="#" class="btn btn-primary">Agregar soldados</a>
+                </div>
+                <br>
+                {% endif %}
+            </tbody>
+    </table>
+    <br>
+    <a href="#" class="btn btn-success">Generar reporte → </a>
+    <br>
+    </div>
+{% endblock content %}

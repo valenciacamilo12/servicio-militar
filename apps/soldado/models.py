@@ -5,7 +5,6 @@ class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=40)
 
-
 class Cuerpo(models.Model):
     id_cuerpo = models.AutoField(primary_key=True)
     denominacion = models.CharField(max_length=40)
