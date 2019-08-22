@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.soldado',
     'apps.cuartel',
     'apps.principal',
+    'apps.usuarios'
 ]
 
 MIDDLEWARE = [
@@ -63,7 +64,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'servicioMilitar.urls'
 
 #LOGIN_REDIRECT_URL = reverse_lazy('')
-#LOGOUT_REDIRECT_URL = ('')
+LOGOUT_REDIRECT_URL = ('index')
 
 TEMPLATES = [
     {
