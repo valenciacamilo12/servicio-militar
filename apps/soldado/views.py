@@ -2,6 +2,8 @@ from django.views.generic import ListView, UpdateView, DeleteView, CreateView
 from apps.soldado.forms import SoldadoForm, ServicioForm, CuerpoForm
 from django.urls import reverse_lazy
 from apps.soldado.models import Soldado, Servicio, Cuerpo
+
+# Reportes PDF
 from django.http import HttpResponse
 from django.conf import settings
 from django.views.generic import View

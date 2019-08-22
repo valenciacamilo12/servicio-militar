@@ -7,7 +7,6 @@ class Compania(models.Model):
     def __str__(self):
         return '{}'.format(self.actividad)
 
-
 class Cuartel(models.Model):
     id_cuartel = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=40)
