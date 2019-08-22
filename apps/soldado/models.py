@@ -1,5 +1,6 @@
 from django.db import models
 from apps.cuartel.models import Compania, Cuartel
+from django.utils.translation import ugettext as _
 
 class Servicio(models.Model):
     id_servicio = models.AutoField(primary_key=True)
@@ -26,3 +27,9 @@ class Soldado(models.Model):
     
     def __str__(self):
         return '{} {}'.format(self.nombre, self.apellido)
+
+
+    class Meta:
+        permissions = {
+            ('is_dos', _('Usuario Dos')),
+        }
